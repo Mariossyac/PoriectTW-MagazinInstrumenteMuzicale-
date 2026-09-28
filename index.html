@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magazin Instrumente Muzicale</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="container">
+            <h1>Magazin de Instrumente Muzicale</h1>
+            <p>Găsește instrumentul potrivit pentru pasiunea ta.</p>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section class="search-section">
+            <h2>Caută un instrument</h2>
+
+            <form class="search-form">
+                <label for="search">Numele instrumentului</label>
+                <input
+                    type="text"
+                    id="search"
+                    name="search"
+                    maxlength="100"
+                    placeholder="Ex: Chitară Bass"
+                >
+
+                <button type="submit">Caută</button>
+            </form>
+        </section>
+
+        <section class="categories">
+            <h2>Categorii</h2>
+
+            <ul class="category-list">
+                <li>Clape</li>
+                <li>Corzi</li>
+                <li>Suflat</li>
+            </ul>
+        </section>
+
+        <section class="instruments">
+            <h2>Instrumente disponibile</h2>
+
+            <div class="instrument-grid">
+
+                <!-- Card 1 -->
+                <article class="instrument-card">
+                    <div class="card-header">
+                        <h3>Chitară Bass</h3>
+                        <span class="status active">În stoc</span>
+                    </div>
+
+                    <div class="card-content">
+                        <p><strong>Tip:</strong> Nou</p>
+                        <p><strong>Categorie:</strong> Corzi</p>
+                        <p><strong>Stare:</strong> Disponibil</p>
+                    </div>
+
+                    <div class="card-footer">
+                        <span class="owner">Proprietar: Magazin</span>
+                    </div>
+                </article>
+
+                <!-- Card 2 -->
+                <article class="instrument-card completed">
+                    <div class="card-header">
+                        <h3>Pian</h3>
+                        <span class="status done">Stoc epuizat</span>
+                    </div>
+
+                    <div class="card-content">
+                        <p><strong>Tip:</strong> SH</p>
+                        <p><strong>Categorie:</strong> Clape</p>
+                        <p><strong>Stare:</strong> Vândut</p>
+                    </div>
+
+                    <div class="card-footer">
+                        <span class="owner">Proprietar: Magazin</span>
+                    </div>
+                </article>
+
+                <!-- Card 3 -->
+                <article class="instrument-card">
+                    <div class="card-header">
+                        <h3>Chitară Acustică</h3>
+                        <span class="status active">În stoc</span>
+                    </div>
+
+                    <div class="card-content">
+                        <p><strong>Tip:</strong> Nou</p>
+                        <p><strong>Categorie:</strong> Corzi</p>
+                        <p><strong>Stare:</strong> Disponibil</p>
+                    </div>
+
+                    <div class="card-footer">
+                        <span class="owner">Proprietar: Magazin</span>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 Magazin de Instrumente Muzicale</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,393 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --bg: #f5f2ed;
+    --card: #ffffff;
+    --dark: #171717;
+    --text: #202020;
+    --muted: #777;
+    --orange: #e86a33;
+    --orange-dark: #c84d1e;
+    --border: #ddd6ce;
+    --green: #16834b;
+    --red: #b8322b;
+    --focus: #ffc107;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container {
+    width: min(1100px, 90%);
+    margin: 0 auto;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    background: var(--dark);
+    color: white;
+    padding: 30px 0;
+    margin-bottom: 35px;
+}
+
+.header h1 {
+    font-size: 2rem;
+    margin-bottom: 5px;
+}
+
+.header p {
+    color: #bdbdbd;
+}
+
+/* =========================
+   SEARCH
+========================= */
+
+.search-section {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+.search-section h2 {
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+}
+
+.search-form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.search-form label {
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.search-form input {
+    width: 100%;
+    padding: 12px 14px;
+
+    border: 1px solid var(--border);
+    border-radius: 8px;
+
+    background: #fafafa;
+    color: var(--text);
+
+    font-size: 1rem;
+}
+
+.search-form button {
+    width: fit-content;
+
+    padding: 11px 25px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: var(--orange);
+    color: white;
+
+    font-weight: bold;
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.search-form button:hover {
+    background: var(--orange-dark);
+}
+
+/* =========================
+   CATEGORII
+========================= */
+
+.categories {
+    margin-bottom: 40px;
+}
+
+.categories h2 {
+    font-size: 1.8rem;
+    margin-bottom: 18px;
+}
+
+.category-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+
+    list-style: none;
+}
+
+.category-list li {
+    padding: 20px;
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+    border-radius: 12px;
+
+    font-weight: bold;
+
+    transition: 0.2s;
+}
+
+.category-list li:hover {
+    border-color: var(--orange);
+    transform: translateY(-3px);
+}
+
+/* =========================
+   INSTRUMENTE
+========================= */
+
+.instruments {
+    margin-bottom: 50px;
+}
+
+.instruments h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+/* IMPORTANT:
+   Două coloane pe desktop
+*/
+
+.instrument-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.instrument-card {
+    background: var(--card);
+
+    border: 1px solid var(--border);
+    border-radius: 14px;
+
+    padding: 22px;
+
+    box-shadow:
+        0 6px 18px rgba(0, 0, 0, 0.05);
+
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s;
+}
+
+.instrument-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 12px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* =========================
+   CARD HEADER
+========================= */
+
+.card-header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 15px;
+
+    padding-bottom: 15px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.card-header h3 {
+    font-size: 1.3rem;
+}
+
+/* =========================
+   STATUS
+========================= */
+
+.status {
+    padding: 5px 10px;
+
+    border-radius: 20px;
+
+    font-size: 0.75rem;
+    font-weight: bold;
+
+    white-space: nowrap;
+}
+
+.status.active {
+    background: #dcfce7;
+    color: var(--green);
+}
+
+.status.done {
+    background: #e5e5e5;
+    color: #555;
+}
+
+/* Card finalizat */
+
+.instrument-card.completed {
+    border: 2px solid #777;
+    background: #eeeeee;
+}
+
+.instrument-card.completed h3 {
+    text-decoration: line-through;
+}
+
+/* =========================
+   CARD CONTENT
+========================= */
+
+.card-content {
+    padding: 18px 0;
+}
+
+.card-content p {
+    margin-bottom: 6px;
+
+    color: var(--muted);
+}
+
+.card-content strong {
+    color: var(--text);
+}
+
+/* =========================
+   CARD FOOTER
+========================= */
+
+.card-footer {
+    padding-top: 12px;
+
+    border-top: 1px solid var(--border);
+}
+
+.owner {
+    color: var(--muted);
+
+    font-size: 0.8rem;
+}
+
+/* =========================
+   FOCUS - TASTATURA
+========================= */
+
+input:focus,
+button:focus {
+    outline: 3px solid var(--focus);
+    outline-offset: 3px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    background: var(--dark);
+
+    color: white;
+
+    text-align: center;
+
+    padding: 30px;
+
+    margin-top: 50px;
+}
+
+/* =========================
+   DARK MODE
+========================= */
+
+@media (prefers-color-scheme: dark) {
+
+    :root {
+        --bg: #101010;
+        --card: #1d1d1d;
+        --text: #f2f2f2;
+        --muted: #aaa;
+        --border: #383838;
+    }
+
+    .search-form input {
+        background: #292929;
+        color: white;
+    }
+
+    .instrument-card.completed {
+        background: #292929;
+        border-color: #777;
+    }
+
+    .status.done {
+        background: #3d3d3d;
+        color: #ddd;
+    }
+
+    .category-list li {
+        background: #1d1d1d;
+    }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 699px) {
+
+    .container {
+        width: 92%;
+    }
+
+    /*
+       S1-R6:
+       Sub 700px -> o singură coloană
+    */
+
+    .instrument-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .category-list {
+        grid-template-columns: 1fr;
+    }
+
+    .card-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .header h1 {
+        font-size: 1.6rem;
+    }
+}
