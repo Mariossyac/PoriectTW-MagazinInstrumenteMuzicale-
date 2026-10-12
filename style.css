@@ -1,393 +1,179 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+:root {
+  --accent-gold: #F8B803;
+  --text-dark: #242424;
+  --text-gray: #757575;
+  --bg-offwhite: #FAFAFA;
+  --white: #FFFFFF;
 }
 
-:root {
-    --bg: #f5f2ed;
-    --card: #ffffff;
-    --dark: #171717;
-    --text: #202020;
-    --muted: #777;
-    --orange: #e86a33;
-    --orange-dark: #c84d1e;
-    --border: #ddd6ce;
-    --green: #16834b;
-    --red: #b8322b;
-    --focus: #ffc107;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    line-height: 1.5;
+  background-color: var(--bg-offwhite);
+  color: var(--text-gray);
+  line-height: 1.6;
 }
 
-/* =========================
-   CONTAINER
-========================= */
-
-.container {
-    width: min(1100px, 90%);
-    margin: 0 auto;
+h1, h2, h3, h4 {
+  color: var(--text-dark);
+  font-weight: 700;
+  margin-bottom: 15px;
 }
 
-/* =========================
-   HEADER
-========================= */
-
-.header {
-    background: var(--dark);
-    color: white;
-    padding: 30px 0;
-    margin-bottom: 35px;
+header {
+  background-color: var(--white);
+  padding: 20px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
-.header h1 {
-    font-size: 2rem;
-    margin-bottom: 5px;
+.logo {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--text-dark);
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-.header p {
-    color: #bdbdbd;
+.logo span {
+  color: var(--accent-gold);
 }
 
-/* =========================
-   SEARCH
-========================= */
-
-.search-section {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 25px;
-    margin-bottom: 30px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
 }
 
-.search-section h2 {
-    margin-bottom: 15px;
-    font-size: 1.4rem;
+nav ul li a {
+  text-decoration: none;
+  color: var(--text-dark);
+  font-weight: 500;
+  transition: color 0.3s;
 }
 
-.search-form {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+nav ul li a:hover {
+  color: var(--accent-gold);
 }
 
-.search-form label {
-    font-weight: bold;
-    font-size: 0.9rem;
+.hero {
+  background-color: var(--text-dark);
+  color: var(--white);
+  padding: 100px 5%;
+  text-align: center;
 }
 
-.search-form input {
-    width: 100%;
-    padding: 12px 14px;
-
-    border: 1px solid var(--border);
-    border-radius: 8px;
-
-    background: #fafafa;
-    color: var(--text);
-
-    font-size: 1rem;
+.hero h1 {
+  color: var(--white);
+  font-size: 48px;
+  margin-bottom: 20px;
 }
 
-.search-form button {
-    width: fit-content;
-
-    padding: 11px 25px;
-
-    border: none;
-    border-radius: 8px;
-
-    background: var(--orange);
-    color: white;
-
-    font-weight: bold;
-    cursor: pointer;
-
-    transition: 0.2s;
+.hero p {
+  font-size: 18px;
+  color: #ccc;
+  max-width: 600px;
+  margin: 0 auto 30px auto;
 }
 
-.search-form button:hover {
-    background: var(--orange-dark);
+.btn {
+  display: inline-block;
+  background-color: var(--accent-gold);
+  color: var(--text-dark);
+  padding: 12px 30px;
+  text-decoration: none;
+  font-weight: 700;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-/* =========================
-   CATEGORII
-========================= */
-
-.categories {
-    margin-bottom: 40px;
+.btn:hover {
+  background-color: #dfa400;
+  transform: translateY(-2px);
 }
 
-.categories h2 {
-    font-size: 1.8rem;
-    margin-bottom: 18px;
+.magazin-container {
+  padding: 60px 5%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.category-list {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-
-    list-style: none;
+.sectiune-titlu {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 40px;
 }
 
-.category-list li {
-    padding: 20px;
-
-    background: var(--card);
-
-    border: 1px solid var(--border);
-    border-radius: 12px;
-
-    font-weight: bold;
-
-    transition: 0.2s;
+.produse-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
 }
 
-.category-list li:hover {
-    border-color: var(--orange);
-    transform: translateY(-3px);
+.card-produs {
+  background-color: var(--white);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
+  padding-bottom: 20px;
 }
 
-/* =========================
-   INSTRUMENTE
-========================= */
-
-.instruments {
-    margin-bottom: 50px;
+.card-produs:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
-.instruments h2 {
-    font-size: 1.8rem;
-    margin-bottom: 20px;
+.imagine-produs {
+  width: 100%;
+  height: 250px;
+  background-color: #eee;
+  object-fit: cover;
 }
 
-/* IMPORTANT:
-   Două coloane pe desktop
-*/
-
-.instrument-grid {
-    display: grid;
-
-    grid-template-columns: repeat(2, 1fr);
-
-    gap: 20px;
+.detalii-produs {
+  padding: 20px;
 }
 
-/* =========================
-   CARD
-========================= */
-
-.instrument-card {
-    background: var(--card);
-
-    border: 1px solid var(--border);
-    border-radius: 14px;
-
-    padding: 22px;
-
-    box-shadow:
-        0 6px 18px rgba(0, 0, 0, 0.05);
-
-    transition:
-        transform 0.2s,
-        box-shadow 0.2s;
+.categorie-produs {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: var(--accent-gold);
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  display: block;
 }
 
-.instrument-card:hover {
-    transform: translateY(-4px);
-
-    box-shadow:
-        0 12px 25px rgba(0, 0, 0, 0.1);
+.nume-produs {
+  font-size: 20px;
+  margin-bottom: 10px;
 }
 
-/* =========================
-   CARD HEADER
-========================= */
-
-.card-header {
-    display: flex;
-
-    justify-content: space-between;
-    align-items: center;
-
-    gap: 15px;
-
-    padding-bottom: 15px;
-
-    border-bottom: 1px solid var(--border);
+.pret-produs {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 15px;
 }
 
-.card-header h3 {
-    font-size: 1.3rem;
-}
-
-/* =========================
-   STATUS
-========================= */
-
-.status {
-    padding: 5px 10px;
-
-    border-radius: 20px;
-
-    font-size: 0.75rem;
-    font-weight: bold;
-
-    white-space: nowrap;
-}
-
-.status.active {
-    background: #dcfce7;
-    color: var(--green);
-}
-
-.status.done {
-    background: #e5e5e5;
-    color: #555;
-}
-
-/* Card finalizat */
-
-.instrument-card.completed {
-    border: 2px solid #777;
-    background: #eeeeee;
-}
-
-.instrument-card.completed h3 {
-    text-decoration: line-through;
-}
-
-/* =========================
-   CARD CONTENT
-========================= */
-
-.card-content {
-    padding: 18px 0;
-}
-
-.card-content p {
-    margin-bottom: 6px;
-
-    color: var(--muted);
-}
-
-.card-content strong {
-    color: var(--text);
-}
-
-/* =========================
-   CARD FOOTER
-========================= */
-
-.card-footer {
-    padding-top: 12px;
-
-    border-top: 1px solid var(--border);
-}
-
-.owner {
-    color: var(--muted);
-
-    font-size: 0.8rem;
-}
-
-/* =========================
-   FOCUS - TASTATURA
-========================= */
-
-input:focus,
-button:focus {
-    outline: 3px solid var(--focus);
-    outline-offset: 3px;
-}
-
-/* =========================
-   FOOTER
-========================= */
-
-.footer {
-    background: var(--dark);
-
-    color: white;
-
-    text-align: center;
-
-    padding: 30px;
-
-    margin-top: 50px;
-}
-
-/* =========================
-   DARK MODE
-========================= */
-
-@media (prefers-color-scheme: dark) {
-
-    :root {
-        --bg: #101010;
-        --card: #1d1d1d;
-        --text: #f2f2f2;
-        --muted: #aaa;
-        --border: #383838;
-    }
-
-    .search-form input {
-        background: #292929;
-        color: white;
-    }
-
-    .instrument-card.completed {
-        background: #292929;
-        border-color: #777;
-    }
-
-    .status.done {
-        background: #3d3d3d;
-        color: #ddd;
-    }
-
-    .category-list li {
-        background: #1d1d1d;
-    }
-}
-
-/* =========================
-   RESPONSIVE
-========================= */
-
-@media (max-width: 699px) {
-
-    .container {
-        width: 92%;
-    }
-
-    /*
-       S1-R6:
-       Sub 700px -> o singură coloană
-    */
-
-    .instrument-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .category-list {
-        grid-template-columns: 1fr;
-    }
-
-    .card-header {
-        align-items: flex-start;
-        flex-direction: column;
-    }
-
-    .header h1 {
-        font-size: 1.6rem;
-    }
+footer {
+  background-color: var(--text-dark);
+  color: var(--white);
+  text-align: center;
+  padding: 30px 20px;
+  margin-top: 50px;
 }
