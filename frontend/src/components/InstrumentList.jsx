@@ -1,4 +1,3 @@
-// frontend/src/components/InstrumentList.jsx
 import InstrumentCard from "./InstrumentCard.jsx";
 
 export default function InstrumentList({ instrumente }) {

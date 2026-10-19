@@ -1,10 +1,10 @@
 const instrumente = [
-  { id: 1, nume: "Chitară Acustică Yamaha", inStoc: true, categorie: "coarde" },
+  { id: 1, nume: "Chitară Acustică Yamaha", inStoc: true, categorie: "corzi" },
   { id: 2, nume: "Pian Digital Roland", inStoc: false, categorie: "clape" },
   { id: 3, nume: "Set Tobe Pearl", inStoc: true, categorie: "percutie" }
 ];
 
-const CATEGORII = ["coarde", "clape", "percutie", "suflatori"];
+const CATEGORII = ["corzi", "clape", "percutie", "suflat"];
 
 function listeazaNume(lista) {
   return lista.map((i) => i.nume);
@@ -59,7 +59,7 @@ console.log("În stoc:", numaraInStoc(instrumente));
 console.log("Căutare 'yamaha':", listeazaNume(cautaDupaNume(instrumente, "yamaha")).join(", "));
 
 console.log("--- Adăugare ---");
-let lista = adaugaInstrument(instrumente, "Saxofon Alto", "suflatori");
+let lista = adaugaInstrument(instrumente, "Saxofon Alto", "suflat");
 console.log("Lista nouă:", lista.length, "instrumente");
 console.log("Originalul a rămas cu:", instrumente.length, "instrumente");
 

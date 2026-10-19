@@ -1,4 +1,3 @@
-// frontend/src/components/InstrumentCard.jsx
 
 const ETICHETE_CATEGORIE = {
   corzi: "Instrument cu corzi",
