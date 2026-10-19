@@ -1,33 +1,53 @@
+// frontend/src/App.jsx
+import "./App.css";
+import InstrumentList from "./components/InstrumentList.jsx";
+
 const instrumente = [
-  { id: 1, nume: "Chitară Acustică Yamaha", inStoc: true, pret: 1200 },
-  { id: 2, nume: "Pian Digital Roland", inStoc: false, pret: 4500 },
-  { id: 3, nume: "Set Tobe Pearl", inStoc: true, pret: 3200 }
+  {
+    id: 1,
+    nume: "Chitară Acustică Yamaha",
+    categorie: "corzi",
+    inStoc: true,
+    pret: 1200
+  },
+  {
+    id: 2,
+    nume: "Pian Digital Roland",
+    categorie: "clape",
+    inStoc: false,
+    pret: 4500
+  },
+  {
+    id: 3,
+    nume: "Set Tobe Acustice Pearl",
+    categorie: "percutie",
+    inStoc: true,
+    pret: 3800
+  }
 ];
 
 export default function App() {
-  const instrumenteDisponibile = instrumente.filter((inst) => inst.inStoc).length;
+  const total = instrumente.length;
+  const active = instrumente.filter((i) => i.inStoc).length;
 
   return (
-    <>
-      <header>
-        <div className="logo">Armonico<span>.</span></div>
-        <nav>
-          <ul>
-            <li>
-              Avem {instrumente.length} instrumente, dintre care {instrumenteDisponibile} în stoc.
-            </li>
-          </ul>
-        </nav>
+    <div className="app-wrapper">
+      <header className="navbar">
+        <h1 className="logo">
+          ARMONICO<span className="dot">.</span>
+        </h1>
+        <p className="header-stats">
+          Avem {total} instrumente, dintre care {active} în stoc.
+        </p>
       </header>
 
-      <main className="magazin-container">
-        <h2 className="sectiune-titlu">Lista Instrumentelor</h2>
-        
-        {/* Afișarea temporară a datelor */}
-        <div className="card-produs" style={{ padding: '20px', textAlign: 'left' }}>
-           <pre>{JSON.stringify(instrumente, null, 2)}</pre>
-        </div>
+      <main className="main-container">
+        <section className="panel">
+          <h2 className="panel-title">Catalogul de instrumente</h2>
+          {/* AICI am scos <pre>{JSON.stringify(...)}</pre> și am pus componenta: */}
+          <InstrumentList instrumente={instrumente} />
+        </section>
       </main>
-    </>
+    </div>
   );
 }

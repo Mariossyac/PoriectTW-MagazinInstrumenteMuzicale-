@@ -17,3 +17,16 @@ JavaScript simplu, fără manipulare DOM. Fișierul `script.js` conține array-u
 | S2-R5 | array-ul original rămâne neschimbat după adăugare | script.js (linia 64) | rând în consolă |
 | S2-R6 | Secțiunea Etapa 2 în README + jurnal AI adăugat | README.md, ai-log/etapa-02.md | citește fișierele |
 | S2-R7 | Commit-ul pentru "Etapa 2" a fost publicat | Istoricul Git | istoricul de commit-uri |
+
+
+## Etapa 3: Inițializarea proiectului (Vite și React)
+
+Aplicația se află acum în folderul `frontend/`, construită cu Vite și React[cite: 1, 9]. Datele din Etapa 2 au fost mutate în componenta principală (`App.jsx`), iar stilurile din Etapa 1 au fost integrate în `App.css`[cite: 1, 6, 7]. Lista de instrumente muzicale este afișată temporar ca text brut (JSON), urmând ca în Etapa 4 să fie transformată în componente cu carduri de produs[cite: 1, 7, 11].
+
+## Cum se rulează aplicația
+1. Navighează în folderul dedicat interfeței:
+   ```bash
+   cd frontend
+   npm install
+   npm run dev
+   
